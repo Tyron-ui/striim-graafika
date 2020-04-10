@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <style>
+      body {
+        margin: 0 auto;
+        width: 100%;
+        height: 100%;
+        background-color: black;
+      }
+
+      .team1 {
+        background-repeat: no-repeat;
+        background-position-x: -100vh;
+        background-image: url('/assets/siim-bundle/team-1/home.png');
+      }
+
+      .team2 {
+        background-repeat: no-repeat;
+        background-position-x: 100vh;
+        background-image: url('/assets/siim-bundle/team-2/away.png');
+      }
+
+      .container{
+        display: flex;
+        height: 100vh;
+        width: 100%;
+      }
+
+      .container div {
+        width: 50%;
+        height: 100%;
+      }
+
+      .container2 {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        position: fixed;
+        align-items: center;
+        justify-content: center;
+        font-family: Century Gothic;
+        font-style: italic;
+        font-weight: bold;
+        color: white;
+        text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.6);
+        font-size: 10vh;
+      }
+  </style>
+  <script  src="https://code.jquery.com/jquery-3.1.0.js"></script>
+</head>
+<body>
+    <div class="container2">
+        <div class="vs">VS</div>
+    </div>
+
+    <div class="container">
+        <div class="team1"></div>
+        <div class="team2"></div>
+    </div>
+</body>
+<script>
+  function moveLogos(show) {
+    const logo1 = $('.team1');
+    const logo2 = $('.team2');
+    const vstext = $(".vs");
+
+    // In milliseconds.
+    const fadeSpeed = "300";
+
+    if (show) {
+      // too esile
+      logo1.animate({'background-position-x': "0vh"})
+      logo2.animate({'background-position-x': "-102.8vh"})
+      vstext.fadeIn(fadeSpeed);
+    } else {
+      // viska nahhui
+      logo1.animate({'back  ground-position-x': "-100vh"})
+      logo2.animate({'background-position-x': "0vh"})
+      vstext.fadeOut(fadeSpeed);
+    }
+  }
+
+  const showRep = nodecg.Replicant('showView');
+  showRep.on('change', (newVal) => moveLogos(!!newVal))
+</script>
+</html>

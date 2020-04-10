@@ -1,0 +1,56 @@
+{
+  "name": "siim-bundle",
+  "version": "0.0.0",
+  "description": "",
+  "homepage": "",
+  "author": {
+    "name": "",
+    "email": "",
+    "url": ""
+  },
+  "files": [
+    "dashboard",
+    "graphics",
+    "extension.js",
+    "extension",
+	  "assets"
+  ],
+  "keywords": [
+    "",
+    "nodecg-bundle"
+  ],
+  "nodecg": {
+  "assetCategories": [
+      {
+        "name": "team-1",
+        "title": "Team-1",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png", "svg"]
+      },
+      {
+        "name": "team-2",
+        "title": "Team-2",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png", "svg"]
+      }
+    ],
+    "compatibleRange": "^1.1.1",
+    "dashboardPanels": [
+      {
+        "name": "tiimid",
+        "title": "Tiimid",
+        "width": 2,
+        "file": "tiimid.html",
+        "headerColor": "#1fb742"
+      }
+    ],
+    "graphics": [
+      {
+        "file": "graafika.html",
+        "width": 1920,
+        "height": 1080
+      }
+	  
+    ]
+  },
+  "repository": "https://github.com/nodecg/nodecg.git",
+  "license": "unlicense"
+}
