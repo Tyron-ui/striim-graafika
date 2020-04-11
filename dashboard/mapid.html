@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <script  src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <style>
+    .monospace {
+      font-family: monospace;
+    }
+  </style>
+<head>
+
+<body>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Dust2.png')">Dust2</button>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Inferno.png')">Inferno</button>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Mirage.png')">Mirage</button>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Nuke.png')">Nuke</button>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Overpass.png')">Overpass</button>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Train.png')">Train</button>
+  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Vertigo.png')">Vertigo</button>
+</body>
+
+<script>
+  let currentMapUrlRep = nodecg.Replicant('currentMapUrl', { defaultValue: '' })
+  
+  function changeMapUrl(imageUrl) {
+    console.log(imageUrl);
+    currentMapUrlRep.value = imageUrl
+  }
+</script>
+
+</html>

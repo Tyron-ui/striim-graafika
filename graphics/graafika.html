@@ -2,56 +2,22 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <style>
-      body {
-        margin: 0 auto;
-        width: 100%;
-        height: 100%;
-        background-color: black;
-      }
-
-      .team1 {
-        background-repeat: no-repeat;
-        background-position-x: -100vh;
-        background-image: url('/assets/siim-bundle/team-1/home.png');
-      }
-
-      .team2 {
-        background-repeat: no-repeat;
-        background-position-x: 100vh;
-        background-image: url('/assets/siim-bundle/team-2/away.png');
-      }
-
-      .container{
-        display: flex;
-        height: 100vh;
-        width: 100%;
-      }
-
-      .container div {
-        width: 50%;
-        height: 100%;
-      }
-
-      .container2 {
-        height: 100%;
-        width: 100%;
-        display: flex;
-        position: fixed;
-        align-items: center;
-        justify-content: center;
-        font-family: Century Gothic;
-        font-style: italic;
-        font-weight: bold;
-        color: white;
-        text-shadow: 6px 6px 8px rgba(0, 0, 0, 0.6);
-        font-size: 10vh;
-      }
-  </style>
+  <link rel="stylesheet" href="styles.css">
+ 
   <script  src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
 <body>
-    <div class="container2">
+    <div id="mapid-koos">
+      <div id="dust2" class="mapid"></div>
+      <div id="inferno" class="mapid"></div>
+      <div id="mirage" class="mapid"></div>
+      <div id="nuke" class="mapid"></div>
+      <div id="overpass" class="mapid"></div>
+      <div id="train" class="mapid"></div>
+      <div id="vertigo" class="mapid"></div>
+    </div>
+
+    <div class="containerVS">
         <div class="vs">VS</div>
     </div>
 
@@ -64,7 +30,7 @@
   function moveLogos(show) {
     const logo1 = $('.team1');
     const logo2 = $('.team2');
-    const vstext = $(".vs");
+    const vstext = $('.vs');
 
     // In milliseconds.
     const fadeSpeed = "300";
@@ -72,7 +38,7 @@
     if (show) {
       // too esile
       logo1.animate({'background-position-x': "0vh"})
-      logo2.animate({'background-position-x': "-102.8vh"})
+      logo2.animate({'background-position-x': "-88.9vh"})
       vstext.fadeIn(fadeSpeed);
     } else {
       // viska nahhui
@@ -82,7 +48,16 @@
     }
   }
 
+  function changeBackground(newMapUrl) {
+    $('body').css('background-image', 'url(' + newMapUrl + ')');
+  }
+
   const showRep = nodecg.Replicant('showView');
   showRep.on('change', (newVal) => moveLogos(!!newVal))
+  
+  const currentMapUrl = nodecg.Replicant('currentMapUrl');
+  currentMapUrl.on('change', (newMapUrl) => changeBackground(newMapUrl))
+  
 </script>
+
 </html>

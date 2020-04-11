@@ -1,5 +1,5 @@
 {
-  "name": "siim-bundle",
+  "name": "striim-graafika",
   "version": "0.0.0",
   "description": "",
   "homepage": "",
@@ -30,6 +30,11 @@
         "name": "team-2",
         "title": "Team-2",
         "allowedTypes": ["jpg", "jpeg", "gif", "png", "svg"]
+      },
+      {
+        "name": "bg",
+        "title": "BG",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png", "svg"]
       }
     ],
     "compatibleRange": "^1.1.1",
@@ -39,6 +44,13 @@
         "title": "Tiimid",
         "width": 2,
         "file": "tiimid.html",
+        "headerColor": "#1fb742"
+      },
+      {
+        "name": "map",
+        "title": "Map",
+        "width": 1,
+        "file": "mapid.html",
         "headerColor": "#1fb742"
       }
     ],
