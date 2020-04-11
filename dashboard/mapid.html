@@ -2,29 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <script  src="https://code.jquery.com/jquery-3.1.0.js"></script>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
   <style>
-    .monospace {
-      font-family: monospace;
+    /* Removes Bootstrap's shadow. */
+    .btn:focus,.btn:active {
+      outline: none !important;
+      box-shadow: none;
     }
   </style>
 <head>
 
 <body>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Dust2.png')">Dust2</button>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Inferno.png')">Inferno</button>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Mirage.png')">Mirage</button>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Nuke.png')">Nuke</button>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Overpass.png')">Overpass</button>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Train.png')">Train</button>
-  <button onclick="changeMapUrl('/assets/striim-graafika/bg/Vertigo.png')">Vertigo</button>
+  <div class="container d-flex justify-content-center p-4">
+    <div class="btn-group-vertical">
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Dust2.png')">Dust2</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Inferno.png')">Inferno</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Mirage.png')">Mirage</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Nuke.png')">Nuke</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Overpass.png')">Overpass</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Train.png')">Train</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Vertigo.png')">Vertigo</button>
+    </div>
+  </div>
 </body>
 
 <script>
   let currentMapUrlRep = nodecg.Replicant('currentMapUrl', { defaultValue: '' })
   
-  function changeMapUrl(imageUrl) {
-    console.log(imageUrl);
+  function changeMapUrl(ref, imageUrl) {
+    // Remove "btn-success" (green color) from all the buttons. This is important!!!
+    // so that only one button stays green.
+    $('.map-btn').removeClass('btn-success');
+    // Add the "btn-success" to the button that user clicked.
+    $(ref).addClass('btn-success');
+
     currentMapUrlRep.value = imageUrl
   }
 </script>
