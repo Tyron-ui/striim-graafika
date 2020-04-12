@@ -3,7 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <link rel="stylesheet" href="styles.css">
- 
+  <link rel="preload" href="/assets/striim-graafika/bg/Dust2.png" as="image">
+  <link rel="preload" href="/assets/striim-graafika/bg/Inferno.png" as="image">
+  <link rel="preload" href="/assets/striim-graafika/bg/Mirage.png" as="image">
+  <link rel="preload" href="/assets/striim-graafika/bg/Nuke.png" as="image">
+  <link rel="preload" href="/assets/striim-graafika/bg/Overpass.png" as="image">
+  <link rel="preload" href="/assets/striim-graafika/bg/Train.png" as="image">
+  <link rel="preload" href="/assets/striim-graafika/bg/Vertigo.png" as="image">
+  
   <script src="https://code.jquery.com/jquery-3.1.0.js"></script>
 </head>
 <body>
@@ -47,6 +54,9 @@
   
   const currentMapUrl = nodecg.Replicant('currentMapUrl');
   currentMapUrl.on('change', (newMapUrl) => changeBackground(newMapUrl))
+
+  // Preload images
+  
   
 </script>
 

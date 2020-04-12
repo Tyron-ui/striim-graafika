@@ -16,13 +16,13 @@
 <body>
   <div class="container d-flex justify-content-center p-4">
     <div class="btn-group-vertical">
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Dust2.png')">Dust2</button>
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Inferno.png')">Inferno</button>
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Mirage.png')">Mirage</button>
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Nuke.png')">Nuke</button>
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Overpass.png')">Overpass</button>
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Train.png')">Train</button>
-      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, '/assets/striim-graafika/bg/Vertigo.png')">Vertigo</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Dust2')">Dust2</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Inferno')">Inferno</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Mirage')">Mirage</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Nuke')">Nuke</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Overpass')">Overpass</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Train')">Train</button>
+      <button class="btn btn-secondary map-btn" onclick="changeMapUrl(this, 'Vertigo')">Vertigo</button>
     </div>
   </div>
 </body>
@@ -30,14 +30,14 @@
 <script>
   let currentMapUrlRep = nodecg.Replicant('currentMapUrl', { defaultValue: '' })
   
-  function changeMapUrl(ref, imageUrl) {
+  function changeMapUrl(ref, mapName) {
     // Remove "btn-success" (green color) from all the buttons. This is important!!!
     // so that only one button stays green.
     $('.map-btn').removeClass('btn-success');
     // Add the "btn-success" to the button that user clicked.
     $(ref).addClass('btn-success');
 
-    currentMapUrlRep.value = imageUrl
+    currentMapUrlRep.value = '/assets/striim-graafika/bg/' + mapName + '.png'
   }
 </script>
 
