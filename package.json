@@ -35,6 +35,11 @@
         "name": "bg",
         "title": "BG",
         "allowedTypes": ["jpg", "jpeg", "gif", "png", "svg"]
+      },
+      {
+        "name": "overlay",
+        "title": "Overlay",
+        "allowedTypes": ["jpg", "jpeg", "gif", "png", "svg"]
       }
     ],
     "compatibleRange": "^1.1.1",
@@ -43,20 +48,32 @@
         "name": "tiimid",
         "title": "Tiimid",
         "width": 2,
-        "file": "tiimid.html",
+        "file": "tiimid_d.html",
         "headerColor": "#1fb742"
       },
       {
         "name": "map",
         "title": "Map",
         "width": 1,
-        "file": "mapid.html",
+        "file": "mapid_d.html",
+        "headerColor": "#1fb742"
+      },
+      {
+        "name": "overlay",
+        "title": "Overlay",
+        "width": 3,
+        "file": "overlay_d.html",
         "headerColor": "#1fb742"
       }
     ],
     "graphics": [
       {
-        "file": "graafika.html",
+        "file": "graafika_g.html",
+        "width": 1920,
+        "height": 1080
+      },
+      {
+        "file": "overlay_g.html",
         "width": 1920,
         "height": 1080
       }
