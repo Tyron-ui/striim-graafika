@@ -1,7 +1,8 @@
 body {
-height:100vh;
-overflow: hidden;
-background-image: url('/assets/striim-graafika/bg/valdoscreen.jpg');
+  height:100vh;
+  overflow: hidden;
+  background-image: url('/assets/striim-graafika/bg/valdoscreen.jpg');
+  background-repeat: no-repeat;
 }
   .container {
       height: 100vh;
@@ -13,10 +14,4 @@ background-image: url('/assets/striim-graafika/bg/valdoscreen.jpg');
     background-position-y: 0vh;
     background-repeat: no-repeat;
     background-image: url('/assets/striim-graafika/overlay/Banneroverlay.png');
-  }
-
-  .mapscore {
-    display: flex;
-    vertical-align: middle;
-    
   }
